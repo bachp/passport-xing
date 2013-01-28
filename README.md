@@ -65,7 +65,7 @@ For a complete, working example, refer to the [login example](https://github.com
     $ npm install --dev
     $ make test
 
-[![Build Status](https://secure.travis-ci.org/pascal-bach/passport-xing.png)](http://travis-ci.org/pascal-bach/passport-xing)
+[![Build Status](https://travis-ci.org/pascal-bach/passport-xing.png?branch=master)](https://travis-ci.org/pascal-bach/passport-xing)
 
 ## Credits
 
