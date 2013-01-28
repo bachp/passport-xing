@@ -1,14 +1,14 @@
 var vows = require('vows');
 var assert = require('assert');
 var util = require('util');
-var linkedin = require('passport-linkedin');
+var xing = require('passport-xing');
 
 
-vows.describe('passport-linkedin').addBatch({
+vows.describe('passport-xing').addBatch({
   
   'module': {
     'should report a version': function (x) {
-      assert.isString(linkedin.version);
+      assert.isString(xing.version);
     },
   },
   

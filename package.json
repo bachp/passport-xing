@@ -1,16 +1,17 @@
 {
-  "name": "passport-linkedin",
+  "name": "passport-xing",
   "version": "0.1.2",
-  "description": "LinkedIn authentication strategy for Passport.",
-  "author": { "name": "Jared Hanson", "email": "jaredhanson@gmail.com", "url": "http://www.jaredhanson.net/" },
+  "description": "Xing authentication strategy for Passport.",
+  "author": { "name": "Pascal Bach", "email": "pascal.bach@nextrem.ch", "url": "http://pascal.nextrem.ch/" },
+  "contributors": [ { "name": "Jared Hanson", "email": "jaredhanson@gmail.com", "url": "http://www.jaredhanson.net/" } ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaredhanson/passport-linkedin.git"
+    "url": "git://github.com/pascal-bach/passport-xing.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/passport-linkedin/issues"
+    "url": "http://github.com/pascal-bach/passport-xing/issues"
   },
-  "main": "./lib/passport-linkedin",
+  "main": "./lib/passport-xing",
   "dependencies": {
     "pkginfo": "0.2.x",
     "passport-oauth": "0.1.x"
@@ -26,5 +27,5 @@
     "type": "MIT",
     "url": "http://www.opensource.org/licenses/MIT" 
   } ],
-  "keywords": ["passport", "linkedin", "auth", "authn", "authentication", "identity"]
+  "keywords": ["passport", "xing", "auth", "authn", "authentication", "identity"]
 }

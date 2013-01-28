@@ -1,28 +1,28 @@
 var vows = require('vows');
 var assert = require('assert');
 var util = require('util');
-var LinkedInStrategy = require('passport-linkedin/strategy');
+var XingStrategy = require('passport-xing/strategy');
 
 
-vows.describe('LinkedInStrategy').addBatch({
+vows.describe('XingStrategy').addBatch({
   
   'strategy': {
     topic: function() {
-      return new LinkedInStrategy({
+      return new XingStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret'
       },
       function() {});
     },
     
-    'should be named linkedin': function (strategy) {
-      assert.equal(strategy.name, 'linkedin');
+    'should be named xing': function (strategy) {
+      assert.equal(strategy.name, 'xing');
     },
   },
   
   'strategy when loading user profile': {
     topic: function() {
-      var strategy = new LinkedInStrategy({
+      var strategy = new XingStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret'
       },
@@ -54,7 +54,7 @@ vows.describe('LinkedInStrategy').addBatch({
         assert.isNull(err);
       },
       'should load profile' : function(err, profile) {
-        assert.equal(profile.provider, 'linkedin');
+        assert.equal(profile.provider, 'xing');
         assert.equal(profile.id, '_XX0XXX00X');
         assert.equal(profile.displayName, 'Jared Hanson');
         assert.equal(profile.name.familyName, 'Hanson');
@@ -71,7 +71,7 @@ vows.describe('LinkedInStrategy').addBatch({
   
   'strategy when loading user profile and encountering an error': {
     topic: function() {
-      var strategy = new LinkedInStrategy({
+      var strategy = new XingStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret'
       },
@@ -111,7 +111,7 @@ vows.describe('LinkedInStrategy').addBatch({
   
   'strategy handling a request that has been denied': {
     topic: function() {
-      var strategy = new LinkedInStrategy({
+      var strategy = new XingStrategy({
           consumerKey: 'ABC123',
           consumerSecret: 'secret'
         },

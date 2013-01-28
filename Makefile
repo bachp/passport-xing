@@ -7,11 +7,11 @@ test:
 
 docs: docs/api.html
 
-docs/api.html: lib/passport-linkedin/*.js
+docs/api.html: lib/passport-xing/*.js
 	dox \
-		--title Passport-LinkedIn \
-		--desc "LinkedIn authentication strategy for Passport" \
-		$(shell find lib/passport-linkedin/* -type f) > $@
+		--title Passport-Xing \
+		--desc "Xing authentication strategy for Passport" \
+		$(shell find lib/passport-xing/* -type f) > $@
 
 docclean:
 	rm -f docs/*.{1,html}
