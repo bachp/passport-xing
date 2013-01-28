@@ -30,7 +30,7 @@ vows.describe('XingStrategy').addBatch({
       
       // mock
       strategy._oauth.get = function(url, token, tokenSecret, callback) {
-        var body = '{ "firstName": "Jared", "id": "_XX0XXX00X", "lastName": "Hanson" }';
+        var body = '{ "users": [ {"first_name": "Jared", "id": "_XX0XXX00X", "last_name": "Hanson", "display_name": "Jared Hanson" } ] }';
         
         callback(null, body, undefined);
       }
