@@ -15,6 +15,10 @@ unobtrusively integrated into any application or framework that supports
 
 ## Usage
 
+In order to use this strategy please make sure your Xing application has at 
+least the *App User Details* access rights. This access rights can be set
+if a production key is generated on the Xing Developer site.
+
 #### Configure Strategy
 
 The Xing authentication strategy authenticates users using a Xing
@@ -43,11 +47,7 @@ For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
     app.get('/auth/xing',
-      passport.authenticate('xing'),
-      function(req, res){
-        // The request will be redirected to Xing for authentication, so
-        // this function will not be called.
-      });
+      passport.authenticate('xing'));
     
     app.get('/auth/xing/callback', 
       passport.authenticate('xing', { failureRedirect: '/login' }),
@@ -69,15 +69,17 @@ For a complete, working example, refer to the [login example](https://github.com
 
 ## Credits
 
-  - [Jared Hanson](http://github.com/jaredhanson)
-  - [Pascal Bach](http://github.com/pascal-bach)
+  - [Jared Hanson](https://github.com/jaredhanson)
+  - [Janett Michaylow](https://github.com/jmichaylow)
+  - [Pascal Bach](https://github.com/pascal-bach)
 
 ## License
 
-(The MIT License)
+[The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011 Jared Hanson
-Copyright (c) 2013 Pascal Bach
+Copyright (c) 2011 Jared Hanson  
+Copyright (c) 2012 Janett Michaylow  
+Copyright (c) 2013 Pascal Bach  
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
