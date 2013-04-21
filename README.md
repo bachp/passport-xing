@@ -55,6 +55,20 @@ application:
         // Successful authentication, redirect home.
         res.redirect('/');
       });
+      
+#### Profile Fields
+
+The Xing profile is very rich, and may contain a lot of information.  The
+strategy can be configured with a `profileFields` parameter which specifies a
+list of fields your application needs.  For example, to fetch the user's ID, name and
+email address, configure strategy like this.
+
+    passport.use(new XingStrategy({
+        // clientID, clientSecret and callbackURL
+        profileFields: ['id', 'first_name', 'last_name', 'active_email']
+      },
+      // verify callback
+    ));
 
 ## Examples
 
