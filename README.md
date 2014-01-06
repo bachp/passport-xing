@@ -70,13 +70,15 @@ email address, configure strategy like this.
       // verify callback
     ));
 
+by deffault the following fields will be fetched form Xing: `id,first_name,last_name,display_name,active_email,page_name,permalink,gender,photo_urls,birth_date`
+
 ## Examples
 
 For a complete, working example, refer to the [login example](https://github.com/pascal-bach/passport-xing/tree/master/examples/login).
 
 ## Tests
 
-    $ npm install --dev
+    $ npm install
     $ make test
 
 [![Build Status](https://travis-ci.org/pascal-bach/passport-xing.png?branch=master)](https://travis-ci.org/pascal-bach/passport-xing)
