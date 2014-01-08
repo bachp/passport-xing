@@ -70,7 +70,7 @@ email address, configure strategy like this.
       // verify callback
     ));
 
-by deffault the following fields will be fetched form Xing: `id,first_name,last_name,display_name,active_email,page_name,permalink,gender,photo_urls,birth_date`
+by default the following fields will be fetched form Xing: `id,first_name,last_name,display_name,active_email,page_name,permalink,gender,photo_urls,birth_date`
 
 ## Examples
 
