@@ -1,6 +1,6 @@
 {
   "name": "passport-xing",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Xing authentication strategy for Passport.",
   "author": { "name": "Pascal Bach", "email": "pascal.bach@nextrem.ch", "url": "http://pascal.nextrem.ch/" },
   "contributors": [ { "name": "Jared Hanson", "email": "jaredhanson@gmail.com", "url": "http://www.jaredhanson.net/" } ],
