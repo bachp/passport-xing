@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 //Cookie Parsing & Session
 app.use(cookieParser());
-app.use(session({ secret: '--SESSION_SECRET--' }));
+app.use(session({ secret: '--SESSION_SECRET--', saveUninitialized: true, resave: true }));
 
 //Passport initialization
 app.use(passport.initialize());
