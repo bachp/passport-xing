@@ -51,7 +51,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new XingStrategy({
     consumerKey: XING_API_KEY,
     consumerSecret: XING_SECRET_KEY,
-    callbackURL: "http://localhost:" + app.get('port') + "/auth/xing/callback"
+    callbackURL: "http://127.0.0.1:" + app.get('port') + "/auth/xing/callback"
   },
   function(token, tokenSecret, profile, done) {
     // asynchronous verification, for effect...
