@@ -76,7 +76,7 @@ vows.describe('XingStrategy').addBatch({
         assert.equal(profile.photos[4].type, 'thumb');
         assert.equal(profile.photos[4].value, 'https://x1.xingassets.com/pubimg/users/c/30x40.jpg');
         assert.equal(profile.gender, 'm');
-        assert.equal(profile.birthday.getTime(), (new Date(Date.UTC(1678, 3, 24)).getTime());
+        assert.equal(profile.birthday.getTime(), (new Date(Date.UTC(1678, 3, 24)).getTime()));
       },
       'should set raw property' : function(err, profile) {
         assert.isString(profile._raw);
