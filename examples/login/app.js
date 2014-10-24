@@ -1,29 +1,32 @@
-var express = require('express')
-  , http = require('http')
-  , passport = require('passport')
-  , util = require('util')
-  , XingStrategy = require('passport-xing').Strategy;
+"use strict"
 
+var express = require('express')
+  , passport = require('passport')
+  , XingStrategy = require('passport-xing').Strategy
+  , session = require('express-session')
+  , cookieParser = require('cookie-parser');
+
+//Initialize Express
 var app = express();
 
-// configure Express
+//Configure Express port
 app.set('port', process.env.PORT || 3000);
+
+//EJS setup
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(express.logger());
-app.use(express.cookieParser());
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(express.session({ secret: 'keyboard cat' }));
-// Initialize Passport!  Also use passport.session() middleware, to support
-// persistent login sessions (recommended).
+
+//Cookie Parsing & Session
+app.use(cookieParser());
+app.use(session({ secret: '--SESSION_SECRET--' }));
+
+//Passport initialization
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(app.router);
-app.use(express.static(__dirname + '/public'));
 
-var XING_API_KEY = "--insert-xing-api-key-here--"
-var XING_SECRET_KEY = "--insert-xing-secret-key-here--";
+//XING API keys
+var XING_API_KEY = "--XING_API_KEY--";
+var XING_SECRET_KEY = "--XING_SECRET_KEY--";
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -48,7 +51,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new XingStrategy({
     consumerKey: XING_API_KEY,
     consumerSecret: XING_SECRET_KEY,
-    callbackURL: "http://127.0.0.1:3000/auth/xing/callback"
+    callbackURL: "http://localhost:" + app.get('port') + "/auth/xing/callback"
   },
   function(token, tokenSecret, profile, done) {
     // asynchronous verification, for effect...
@@ -94,7 +97,7 @@ app.get('/auth/xing',
 app.get('/auth/xing/callback',
   passport.authenticate('xing', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/account');
   });
 
 app.get('/logout', function(req, res){
@@ -102,10 +105,11 @@ app.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+var server = app.listen(app.get('port'), function () {
 
+  console.log('App listening on port %s', app.get('port'));
+
+});
 
 // Simple route middleware to ensure user is authenticated.
 //   Use this route middleware on any resource that needs to be protected.  If
